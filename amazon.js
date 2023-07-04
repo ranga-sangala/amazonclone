@@ -38,7 +38,7 @@ let productsHtml = '';
         Added
         </div>
 
-        <button class="add-to-cart-button button-primary js-add-to-cart" >
+        <button class="add-to-cart-button button-primary js-add-to-cart" id=${product.id} >
         Add to Cart
         </button>
     </div>
@@ -48,8 +48,8 @@ let productsHtml = '';
 document.querySelector('.js-products-grid').innerHTML = productsHtml
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
-    button.addEventListener('click', () => {
-      console.log("clicked")
+    button.addEventListener('click', (event) => {
+      console.log(event.target.id)
     });
   });
 
